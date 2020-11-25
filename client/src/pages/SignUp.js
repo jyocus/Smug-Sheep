@@ -19,6 +19,8 @@ import "../index.css";
 
 //Imported Components 
 import LoginButton from "../components/LoginButton"
+import LogoutButton from "../components/LogOutButton"
+import Profile from "../components/Profile"
 
 function Copyright() {
   return (
@@ -102,6 +104,7 @@ export default function SignUp() {
           />
 
           <LoginButton />
+          <LogoutButton />
           
           <Grid container>
             <Grid item xs>
@@ -119,6 +122,8 @@ export default function SignUp() {
       </div>
       <Box mt={8}>
         <Copyright />
+
+        <Profile />
       </Box>
     </Container>
   );

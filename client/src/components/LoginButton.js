@@ -1,4 +1,4 @@
-//With ES7 React tool in VSStore. type 'rafce' and it will generate a boilerplate of a Login Button. 
+//With ES7 React tool in VSStore. type 'rafce' and it will generate a boilerplate of a ComponentName.js. 
 import React from 'react'
 //Importing the Hook makeStyles from @material
 import { makeStyles } from '@material-ui/core/styles';
