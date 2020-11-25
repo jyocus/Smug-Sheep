@@ -8,11 +8,13 @@ import JSONPretty from "react-json-pretty";
 
 export const Profile = () => {
 
-const { user } = useAuth0()
+    //the isAuthenticated setState(?) property now it will only be rendered if user is authenticated. Need some JSX at the Bottom.
+const { user, isAuthenticated } = useAuth0()
 
     return (
+        isAuthenticated && (
     <div>
-        <JSONPretty data={ user }/>
+        {/* <JSONPretty data={ user }/> */}
     <img src={user.picture} alt={user.name} />
         <h1>{user.name}</h1>
 
@@ -22,6 +24,8 @@ const { user } = useAuth0()
         <footer>Is my Email Verified: {user.email_verified} </footer>            
     </div>
     )
+)
+
 }
 
 export default Profile
