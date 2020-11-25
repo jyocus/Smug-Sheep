@@ -14,14 +14,14 @@ const { user, isAuthenticated } = useAuth0()
     return (
         isAuthenticated && (
     <div>
-        {/* <JSONPretty data={ user }/> */}
-    <img src={user.picture} alt={user.name} />
+        <JSONPretty data={ user }/>
+    {/* <img src={user.picture} alt={user.name} />
         <h1>{user.name}</h1>
 
         <p>Reach out to me about my baaaaogs at: {user.email} </p>
             
 
-        <footer>Is my Email Verified: {user.email_verified} </footer>            
+        <footer>Is my Email Verified: {user.email_verified} </footer>             */}
     </div>
     )
 )
