@@ -9,7 +9,7 @@ function LogOutButton() {
 
 
     return (
-        <button onClick={() => logout()}>
+        <button onClick={() => logout({returnTo: "/test"})}>
             Log Out
         </button>
     )

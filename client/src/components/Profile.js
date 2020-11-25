@@ -4,6 +4,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 //Optional npm package to make stringified objects 'prettier'
 import JSONPretty from "react-json-pretty";
     // ---->   <JSONPretty data={ user }/>
+import Test from "./Test";
 
 
 export const Profile = () => {
