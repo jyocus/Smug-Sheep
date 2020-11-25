@@ -123,7 +123,7 @@ export default function SignUp() {
       <Box mt={8}>
         <Copyright />
 
-        <Profile />
+        {/* <Profile /> */}
       </Box>
     </Container>
   );
