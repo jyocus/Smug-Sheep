@@ -6,11 +6,13 @@ import Button from '@material-ui/core/Button';
 //this is a Hook made by Auth0
 import { useAuth0 } from '@auth0/auth0-react'
 
-const useStyles = makeStyles(theme => {
-    submit: {
-        margin: theme.spacing(3,0,2)
-    }
-})
+const useStyles = makeStyles(theme => ({
+    '@global': {
+        submit: {
+            margin: theme.spacing(3, 0, 2)
+        }
+      }
+}))
 
 
 const LoginButton = () => {
@@ -22,14 +24,14 @@ const LoginButton = () => {
 
     return (
         // Creating a button that has an onClick function. With JSX logic we can call the const above into an OnClick function
-        <button onClick={() => loginWithRedirect()}
+        <Button onClick={() => loginWithRedirect()}
             type="submit"
             fullWidth
             variant="contained"
             color="secondary"
-            className={classes.submit} >
+            className={classes.submit}>
             Log In
-        </button>
+        </Button>
     )
 }
 
