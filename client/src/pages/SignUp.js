@@ -2,7 +2,7 @@
 // https://www.youtube.com/watch?v=PWadEeOuv5o
 import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
+//import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -16,6 +16,9 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import "../index.css";
+
+//Imported Components 
+import LoginButton from "../components/LoginButton"
 
 function Copyright() {
   return (
@@ -97,15 +100,9 @@ export default function SignUp() {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="secondary"
-            className={classes.submit}
-          >
-            Sign In
-          </Button>
+
+          <LoginButton />
+          
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
