@@ -35,7 +35,7 @@ const LoginButton = () => {
             variant="contained"
             color="secondary"
             className={classes.submit}>
-            Log In
+            Join the Flock!
         </Button>
     )
 }

@@ -5,12 +5,15 @@ import { useAuth0 } from '@auth0/auth0-react';
 import JSONPretty from "react-json-pretty";
     // ---->   <JSONPretty data={ user }/>
 import Test from "./Test";
+import API from "../utils/API";
 
 
 export const Profile = () => {
 
     //the isAuthenticated setState(?) property now it will only be rendered if user is authenticated. Need some JSX at the Bottom.
 const { user, isAuthenticated } = useAuth0()
+
+API.getUser(user)
 
     return (
         isAuthenticated && (
