@@ -49,6 +49,8 @@ export default function MultilineTextFields() {
             defaultValue="Grace the Flock"
             />
             <Button variant="contained">Bleet</Button>
+             {/* List component that uses component did mount to run the API call. Then a map function will run through the posts.  */}
+            {/* <List /> */}
         </div>
         </form>
     </Grid>  

@@ -12,6 +12,9 @@ getUser: function(data) {
 },
 showUser: function() {
     console.log(userData)
+},
+getFavQs: function() {
+    return axios.get("/api/generic/favQ")
 }
 
 
