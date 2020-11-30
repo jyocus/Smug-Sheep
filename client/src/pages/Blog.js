@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../components/Header'
 import './Blog.css'
 import Profile from '../components/Profile';
+import MultilineTextFields from '../components/Form'
 
 function Blog() {
     return (
@@ -9,6 +10,7 @@ function Blog() {
             <Header />
             HELLO SHEEP
             <Profile />
+            <MultilineTextFields />
         </div>
     )
 }
