@@ -1,16 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
 import SignUp from './pages/index'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Test } from './components/Test';
+import Blog from './pages/Blog';
+// import { Test } from './components/Test';
 
 
 function App() {
   return (
-    <div className="App">
-      <SignUp />
-      
-    </div>
+    <Router>
+      <div className="App">
+        {/* <SignUp /> */}
+        {/* <Route path="/" component={SignUp} />
+        <Route path="/blog" component={Blog} /> */}
+
+        <Switch>
+          <Route exact path="/" component={SignUp} />
+          <Route exact path="/blog" component={Blog} />
+        </Switch>
+
+
+      </div>
+    </Router>
   );
 }
 
