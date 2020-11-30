@@ -8,20 +8,8 @@ import { Test } from './components/Test';
 function App() {
   return (
     <div className="App">
-      {/* <SignUp /> */}
-      <Router>
-      <div>
-        
-        <Switch>
-          <Route exact path={["/"]}>
-            <SignUp />
-          </Route>  
-          <Route exact path={["/test"]}>
-            <Test />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+      <SignUp />
+      
     </div>
   );
 }
