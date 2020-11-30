@@ -76,7 +76,7 @@ export default function SignUp() {
           ready for some good news?
         </Typography>
         <form className={classes.form} noValidate>
-          <TextField
+          {/* <TextField
             variant="outlined"
             margin="normal"
             required
@@ -101,13 +101,13 @@ export default function SignUp() {
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
-          />
+          /> */}
 
           <LoginButton />
-          <LogoutButton />
+          {/* <LogoutButton /> */}
           
           <Grid container>
-            <Grid item xs>
+            {/* <Grid item xs>
               <Link href="#" variant="body2">
                 Forgot password?
               </Link>
@@ -116,7 +116,7 @@ export default function SignUp() {
               <Link href="#" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
-            </Grid>
+            </Grid> */}
           </Grid>
         </form>
       </div>
