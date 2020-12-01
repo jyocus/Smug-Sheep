@@ -4,6 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import VirtualizedList from './List';
+import API from '../utils/API';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,15 +25,37 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MultilineTextFields() {
   const classes = useStyles();
-  const [value, setValue] = React.useState('Controlled');
+  const [blog, setBlog] = React.useState({
+    title: "",
+    body: ""
+  });
+  const userPosts = [];
 
+// Helper function to capture typing
   const handleChange = (event) => {
-    setValue(event.target.value);
+    const {name, value} = event.target
+    console.log(name, value)
+    setBlog({...blog, [name]: value});
+    //console.log(event.target.name)
+    //console.log(event.target.value);
   };
 
   // const inputProps = {
   //   fullWidth: true,
   // };
+  // Helper function for button on click
+  const handleClick = (event) => {
+    console.log(blog)
+    event.preventDefault()
+    API.savePost(blog).then((result) => {
+      console.log("testing save post result", result);
+      //setValue(result);
+    })
+    //console.log("testing event data", event)
+    //userPosts.push(event.target.value)
+    //console.log("User Post Array", userPosts);
+
+  }
 
   return (
    <Grid className={classes.form} item xs={6} md={12}>
@@ -50,6 +73,8 @@ export default function MultilineTextFields() {
                 label="Title"
                 placeholder="i.e. Friendly Neighbor"
                 multiline
+                name="title"
+                value={blog.title}
                 rowsMax={4}
                 // defaultValue="Title"
                 onChange={handleChange}
@@ -61,13 +86,16 @@ export default function MultilineTextFields() {
                 label="Body"
                 placeholder="Before the storm started my neighbor brought in my favorite plants. Thank you!"
                 multiline
+                onChange={handleChange}
+                value={blog.body}
+                name="body"
                 rows={4}
                 variant="outlined"
                 // defaultValue="Share your good news!"
                 // fullWidth="true"
                 style = {{width: 400}}
                 /> 
-                <Button className={classes.what} variant="contained">Bleet</Button>   
+                <Button onClick={handleClick} className={classes.what} variant="contained">Bleet</Button>   
             </Grid>
 
             <Grid
