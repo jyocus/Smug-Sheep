@@ -12,10 +12,22 @@ getUser: function(data) {
 },
 showUser: function() {
     console.log(userData)
-}
+},
 
+  // Gets all posts
+  getPosts: function(res) {
+    return axios.get("/api/posts");
+  },
 
+  // Saves a post to the database
+  savePost: function(postData) {
+    return axios.post("/api/posts", postData);
+  }
 
+    // // Deletes the post with the given id
+    // deletePost: function(id) {
+    //     return axios.delete("/api/posts/" + id);
+    //   },
 
 
 
