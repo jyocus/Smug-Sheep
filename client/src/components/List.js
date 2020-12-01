@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { FixedSizeList } from 'react-window';
+import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,6 +24,7 @@ function renderRow(props) {
     <ListItem button style={style} key={index}>
       <ListItemText primary={`Item ${index + 1}`} />
     </ListItem>
+    
   );
 }
 
@@ -36,7 +38,7 @@ export default function VirtualizedList() {
 
   return (
     <div className={classes.root}>
-      <FixedSizeList height={300} width={600} itemSize={46} itemCount={200}>
+      <FixedSizeList height={300} width={600} itemSize={60} itemCount={200}>
         {renderRow}
       </FixedSizeList>
     </div>
