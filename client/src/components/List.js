@@ -12,8 +12,8 @@ const useStyles = makeStyles((theme) => ({
     height: 300,
     maxWidth: 600,
     backgroundColor: theme.palette.background.paper,
-    paddingRight: "20px",
-    margin: "5px"
+    marginRight: theme.spacing(3),
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
   },
 }));
 

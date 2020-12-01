@@ -30,6 +30,10 @@ export default function MultilineTextFields() {
     setValue(event.target.value);
   };
 
+  // const inputProps = {
+  //   fullWidth: true,
+  // };
+
   return (
    <Grid className={classes.form} item xs={6} md={12}>
         <form className={classes.root} noValidate autoComplete="off">
@@ -44,19 +48,24 @@ export default function MultilineTextFields() {
                 <TextField
                 id="standard-multiline-flexible"
                 label="Title"
+                placeholder="i.e. Friendly Neighbor"
                 multiline
                 rowsMax={4}
-                defaultValue="Title"
+                // defaultValue="Title"
                 onChange={handleChange}
                 variant="outlined"
+                style = {{width: 400}}
                 />
                 <TextField
                 id="standard-multiline-static"
                 label="Body"
+                placeholder="Before the storm started my neighbor brought in my favorite plants. Thank you!"
                 multiline
                 rows={4}
                 variant="outlined"
-                defaultValue="Grace the Flock"
+                // defaultValue="Share your good news!"
+                // fullWidth="true"
+                style = {{width: 400}}
                 /> 
                 <Button className={classes.what} variant="contained">Bleet</Button>   
             </Grid>

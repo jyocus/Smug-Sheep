@@ -5,7 +5,8 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
-// import Image from 'material-ui-image';
+import Image from 'material-ui-image';
+import SheepImage from '../components/SheepImage'
 
 
 
@@ -48,11 +49,12 @@ export default function MainFeaturedPost(props) {
     <Paper className={classes.mainFeaturedPost} style={{  }}>
       {/* Increase the priority of the hero background image */}
       {/* {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />} */}
-      {/* <Image 
-        src={`https://unsplash.com/photos/Cf1kLbwFZcg`}
+      {/* <Image
+      src="http://loremflickr.com/300/200"
       /> */}
       <div className={classes.overlay} />
       <Grid container>
+        
         <Grid item md={6}>
           <div className={classes.mainFeaturedPostContent}>
             <Typography component="h1" variant="h3" color="inherit" gutterBottom>
@@ -61,9 +63,12 @@ export default function MainFeaturedPost(props) {
             <Typography variant="h5" color="inherit" paragraph>
               {post.description}
             </Typography>
-            <Link variant="subtitle1" href="#">
+            <Grid item md={4}>
+              <SheepImage />
+            </Grid>
+            {/* <Link variant="subtitle1" href="#">
               {post.linkText}
-            </Link>
+            </Link> */}
           </div>
         </Grid>
       </Grid>
