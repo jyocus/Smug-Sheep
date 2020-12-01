@@ -7,10 +7,18 @@ import Button from '@material-ui/core/Button';
 const useStyles = makeStyles((theme) => ({
   root: {
     '& .MuiTextField-root': {
-      margin: theme.spacing(1),
+      margin: theme.spacing(3),
       width: '25ch',
-    },
+      paddingTop: "20px",
+    }
   },
+  what: {
+    background: 'linear-gradient(45deg, #FF8E53 30%, #FE6B8B 90%)',
+    marginLeft: theme.spacing(3),
+  },
+  form: {
+    marginBottom: theme.spacing(3),
+  }
 }));
 
 export default function MultilineTextFields() {
@@ -22,34 +30,35 @@ export default function MultilineTextFields() {
   };
 
   return (
-    <Grid item xs={12} md={8}>
+    <Grid className={classes.form} item xs={6} md={8}>
         <form className={classes.root} noValidate autoComplete="off">
-        <div>
-            <TextField
-            id="standard-multiline-flexible"
-            label="Title"
-            multiline
-            rowsMax={4}
-            defaultValue="Title"
-            onChange={handleChange}
-            variant="outlined"
-            />
-            {/* <TextField
-            id="standard-textarea"
-            label="Multiline Placeholder"
-            placeholder="Placeholder"
-            multiline
-            /> */}
-            <TextField
-            id="standard-multiline-static"
-            label="Body"
-            multiline
-            rows={4}
-            variant="outlined"
-            defaultValue="Grace the Flock"
-            />
-            <Button variant="contained">Bleet</Button>
-        </div>
+          <div>
+            <Grid
+            container
+            direction="column"
+            justify="flex-start"
+            alignItems="flex-start">
+                <TextField
+                id="standard-multiline-flexible"
+                label="Title"
+                multiline
+                rowsMax={4}
+                defaultValue="Title"
+                onChange={handleChange}
+                variant="outlined"
+                />
+                <TextField
+                id="standard-multiline-static"
+                label="Body"
+                multiline
+                rows={4}
+                variant="outlined"
+                defaultValue="Grace the Flock"
+                /> 
+                <Button className={classes.what} variant="contained">Bleet</Button>
+            </Grid>
+            
+          </div>
         </form>
     </Grid>  
   );
