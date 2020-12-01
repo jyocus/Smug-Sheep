@@ -1,6 +1,7 @@
 // Dependencies
 const express = require('express');
 const routes = require('./routes');
+const mongoose = require("mongoose");
 
 // Express instance
 const app = express();
@@ -20,6 +21,9 @@ if (process.env.NODE_ENV === 'production') {
 
 // API and View Routes
 app.use(routes);
+
+// Connect to the Mongo DB
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/codingShepherd");
 
 // Start the server
 app.listen(PORT, () => {

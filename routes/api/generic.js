@@ -6,4 +6,7 @@ const genericController = require("../../controllers/genericController");
 router.route("/")
   .get(genericController.genericTest)
 
+  router.route("/")
+  .get(genericController.findAll)
+
 module.exports = router;
