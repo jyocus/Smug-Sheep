@@ -5,6 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
+// import Image from 'material-ui-image';
 
 
 
@@ -47,6 +48,9 @@ export default function MainFeaturedPost(props) {
     <Paper className={classes.mainFeaturedPost} style={{  }}>
       {/* Increase the priority of the hero background image */}
       {/* {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />} */}
+      {/* <Image 
+        src={`https://unsplash.com/photos/Cf1kLbwFZcg`}
+      /> */}
       <div className={classes.overlay} />
       <Grid container>
         <Grid item md={6}>

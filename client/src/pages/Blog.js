@@ -8,12 +8,12 @@ import MainFeaturedPost from '../components/MainFeaturedPost';
 import Grid from '@material-ui/core/Grid';
 
 const mainFeaturedPost = {
-    title: 'Title of a longer featured blog post',
+    title: "So what's the good news?",
     description:
-      "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
-    image: 'https://source.unsplash.com/random',
-    imgText: 'main image description',
-    linkText: 'Continue reading…',
+      "Each day we have the chance to spread positivity. Here we provide the space to share those stories...",
+    // image: 'https://source.unsplash.com/random',
+    // imgText: 'main image description',
+    // linkText: 'Continue reading…',
   };
 
 function Blog() {

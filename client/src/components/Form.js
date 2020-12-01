@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
+import SheepCard from '../components/SheepCard';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,9 +31,12 @@ export default function MultilineTextFields() {
   };
 
   return (
-    <Grid className={classes.form} item xs={6} md={8}>
+   <Grid className={classes.form} item xs={6} md={8}>
         <form className={classes.root} noValidate autoComplete="off">
           <div>
+         <Grid
+         container 
+         direction="row">
             <Grid
             container
             direction="column"
@@ -55,9 +59,16 @@ export default function MultilineTextFields() {
                 variant="outlined"
                 defaultValue="Grace the Flock"
                 /> 
-                <Button className={classes.what} variant="contained">Bleet</Button>
+                <Button className={classes.what} variant="contained">Bleet</Button>      
             </Grid>
-            
+            <Grid 
+            container
+            direction="column"
+            justify="center"
+            alignItems="flex-end">
+               <SheepCard />
+            </Grid>
+           </Grid>
           </div>
         </form>
     </Grid>  
