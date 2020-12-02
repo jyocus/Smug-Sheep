@@ -19,13 +19,19 @@ const useStyles = makeStyles((theme) => ({
 
 function renderRow(props) {
   const { index, style } = props;
-
+//console.log('render row is happening!!!', props, index)
+//if(props.data[index].title) {
+  const item = props.data[props.index];
+  console.log('EAH POST DISPALY NAME', item)
   return (
     <ListItem button style={style} key={index}>
-      <ListItemText primary={`Item ${index + 1}`} />
+      <ListItemText primary={`${item.title}`} />
+      <ListItemText primary={`${item.body}`} />
     </ListItem>
     
   );
+//}
+  
 }
 
 renderRow.propTypes = {
@@ -33,12 +39,25 @@ renderRow.propTypes = {
   style: PropTypes.object.isRequired,
 };
 
-export default function VirtualizedList() {
-  const classes = useStyles();
+export default function VirtualizedList(props) {
 
+
+  const classes = useStyles();
+console.log('virtualized list happening!!!', props.posts.length)
   return (
     <div className={classes.root}>
-      <FixedSizeList height={300} width={600} itemSize={60} itemCount={200}>
+      <h1> Tme to loop over db ppl!!</h1>
+
+        {/* {renderRow} */}
+        {/* {props.posts.map((singlePost) => {
+          return (
+            <ListItem >
+              <ListItemText primary={`tom ${ 1}`} />
+            </ListItem>
+          )
+        })} */}
+      
+      <FixedSizeList itemData={props.posts} height={300} width={600} itemSize={60} itemCount={props.posts.length}>
         {renderRow}
       </FixedSizeList>
     </div>
