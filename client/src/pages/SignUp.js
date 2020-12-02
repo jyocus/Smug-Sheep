@@ -24,6 +24,8 @@ import LoginButton from "../components/LoginButton"
 import LogoutButton from "../components/LogOutButton"
 import Profile from "../components/Profile"
 
+import { useAuth0 } from '@auth0/auth0-react';
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -62,10 +64,25 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+const name = 'Bill'
+
+//var whatColor = name === 'Tom' ? (<h1> Hello tom!</h1>) : ''
+
+// if (name === 'Tom') {
+//   return 'red'
+// }
+// else {
+//   return 'blue'
+// }
+
 
 
 export default function SignUp() {
   const classes = useStyles();
+
+  const { user, isAuthenticated } = useAuth0()
+console.log('isAutheticated in signup page!!', isAuthenticated)
+
 
   return (
     <React.Fragment>
@@ -78,6 +95,7 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           ready for some good news?
         </Typography>
+       
         <form className={classes.form} noValidate>
           {/* <TextField
             variant="outlined"
@@ -105,8 +123,8 @@ export default function SignUp() {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           /> */}
-
-          <LoginButton />
+          {isAuthenticated === true ? "" : <LoginButton />}
+          {/* <LoginButton /> */}
           {/* <LogoutButton /> */}
           
           <Grid container>
