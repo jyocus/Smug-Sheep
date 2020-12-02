@@ -14,7 +14,7 @@
 * Additional Questions   
 
 ## Description 
-In the year 2020 we all learned a lot about ourselves as well as the world around us. Often, focusing on the negative is easier than focusing on the positive. Because of that, the team at Smug Sheep wanted to provide a space to share the good in your life, no matter how big or small, in a safe anonymous environment. Maybe a stranger bought your groceries or maybe your neighbor just happened to bring in your plants before the big storm...either way it deserves recognition! So hop on over the the Smug Sheep feed, join the flock, and start sheering that negativity away one king gesture at a time.
+In the year 2020 we all learned a lot about ourselves as well as the world around us. Often, focusing on the negative is easier than focusing on the positive. Because of that, the team at Smug Sheep wanted to provide a space to share the good in your life, no matter how big or small, in a safe anonymous environment. Maybe a stranger bought your groceries or maybe your neighbor just happened to bring in your plants before the big storm...either way it deserves recognition! So hop on over the the Smug Sheep feed, join the flock, and start shearing that negativity away one kind story at a time.
 
 ## Production Team
 * [Alex Eesley ](https://github.com/aeesley)
@@ -23,7 +23,7 @@ In the year 2020 we all learned a lot about ourselves as well as the world aroun
 * [Justin Yocus](https://github.com/jyocus)
 
 ## How to Use
-After you have joined the flock, take a moment to reflect on your day. Once you've identified a positive moment, write it down into the supplied text field. Don't worry! Everything you post will be posted anonymously so feel free to dive into those emotions. Your small moment of kindness might just be what helps somebody else make it through the day! 
+After you have joined the flock, take a moment to reflect on your day. Once you've herded a positive moment, write it down into the supplied text field. Scared to open up? Don't worry! Everything you post will be posted anonymously so feel free to dive into those emotions. Your small moment of kindness might just be what helps somebody else make it through the day! 
 
 ## Demo Links 
 [Smug Sheep on Heroku](https://still-sands-13571.herokuapp.com/)
