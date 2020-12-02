@@ -19,10 +19,11 @@ const useStyles = makeStyles((theme) => ({
 
 function renderRow(props) {
   const { index, style } = props;
-
+  const item = props.data[props.index];
   return (
     <ListItem button style={style} key={index}>
-      <ListItemText primary={`Item ${index + 1}`} />
+      <ListItemText primary={`${item.title}`} />
+      <ListItemText primary={`${item.body}`} />
     </ListItem>
     
   );
@@ -33,12 +34,14 @@ renderRow.propTypes = {
   style: PropTypes.object.isRequired,
 };
 
-export default function VirtualizedList() {
-  const classes = useStyles();
+export default function VirtualizedList(props) {
 
+  const classes = useStyles();
   return (
     <div className={classes.root}>
-      <FixedSizeList height={300} width={600} itemSize={60} itemCount={200}>
+      <h1>Your Recent Bleets</h1>
+      
+      <FixedSizeList itemData={props.posts} height={300} width={600} itemSize={60} itemCount={props.posts.length}>
         {renderRow}
       </FixedSizeList>
     </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
@@ -27,9 +27,25 @@ export default function MultilineTextFields() {
   const classes = useStyles();
   const [blog, setBlog] = React.useState({
     title: "",
-    body: ""
+    body: "",
+    userPosts: []
   });
   const userPosts = [];
+
+
+  useEffect(()=>{
+
+    console.log('HAPPENING!! one time!!')
+
+    API.getPosts().then(function(data) {
+      console.log('anyhting back from db ???', data)
+
+      setBlog({...blog, userPosts: data.data})
+
+    })
+
+
+  }, [])
 
 // Helper function to capture typing
   const handleChange = (event) => {
@@ -56,7 +72,7 @@ export default function MultilineTextFields() {
     //console.log("User Post Array", userPosts);
 
   }
-
+  console.log("testing new array", blog)
   return (
    <Grid className={classes.form} item xs={6} md={12}>
         <form className={classes.root} noValidate autoComplete="off">
@@ -104,7 +120,8 @@ export default function MultilineTextFields() {
             direction="column"
             justify="center"
             alignItems="center">
-              <VirtualizedList />
+              <VirtualizedList 
+              posts={blog.userPosts}/>
             </Grid>
 
             {/* <Grid 
