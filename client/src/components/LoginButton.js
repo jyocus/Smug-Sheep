@@ -24,8 +24,8 @@ const LoginButton = () => {
     //Destructuring the Hook 
     const {loginWithRedirect} = useAuth0();
 
+    // console.log(loginWithRedirect);
 
-    
 
     return (
         // Creating a button that has an onClick function. With JSX logic we can call the const above into an OnClick function
