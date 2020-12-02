@@ -64,20 +64,9 @@ export default function Profile() {
           <Typography className={classes.title} color="textPrimary">
             Email: {user.email}
           </Typography>
-
           <Avatar className={classes.avatar} alt={user.name} src={user.picture} />
-          {/* <Typography className={classes.pos} color="textSecondary">
-            adjective
-          </Typography> */}
-          {/* <Typography variant="body2" component="p">
-            well meaning and kindly.
-            <br />
-            {'"a benevolent smile"'}
-          </Typography> */}
         </CardContent>
-        {/* <CardActions> */}
           <Button href="/blog" variant="contained" className={classes.button} color="secondary" size="small">Start Shearing</Button>
-        {/* </CardActions> */}
       </Card>
         )
     );
