@@ -68,6 +68,7 @@ export default function SignUp() {
   const classes = useStyles();
 
   return (
+    <React.Fragment>
     <Container className="main" component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
@@ -124,9 +125,11 @@ export default function SignUp() {
       </div>
       <Box mt={8}>
         <Copyright />
-
-          <Profile />
+          
       </Box>
     </Container>
+    {/* HERE IS THE PROFILE COMPONENT  */}
+    <Profile />
+    </React.Fragment>
   );
 }
