@@ -10,6 +10,7 @@
 * How to Use
 * Demo Link
 * Screenshot
+* Resources
 * Additional Questions   
 
 ## Description 
@@ -32,6 +33,13 @@ After you have joined the flock, take a moment to reflect on your day. Once you'
 ## Screenshot
 ![Smug Sheep Landing](./client/public/Smug_landing.png)
 <!-- ![Veggie Section](./readme_images/VG_readme_screenshot.png) -->
+
+## Resources 
+* [Auth0](https://auth0.com/)
+* [Particles](https://www.npmjs.com/package/particles-bg)
+* [Material-UI](https://material-ui.com/)
+* [Iconify React](https://iconify.design/icon-sets/simple-icons/react.html)
+* [Mongo DB](https://www.mongodb.com/)
 
 ## Additional Questions
 If you have any questions about the project or would like to contact us, please reach out through GitHub.
