@@ -6,6 +6,7 @@ import JSONPretty from "react-json-pretty";
     // ---->   <JSONPretty data={ user }/>
 import Test from "./Test";
 import API from "../utils/API";
+import LogOutButton from "./LogOutButton"
 
 
 export const Profile = () => {
@@ -13,12 +14,17 @@ export const Profile = () => {
     //the isAuthenticated setState(?) property now it will only be rendered if user is authenticated. Need some JSX at the Bottom.
 const { user, isAuthenticated } = useAuth0()
 
+
+
 API.getUser(user)
 
     return (
         isAuthenticated && (
     <div>
         <JSONPretty data={ user }/>
+        <a href="/blog">blog</a>
+        <LogOutButton />
+        
     {/* <img src={user.picture} alt={user.name} />
         <h1>{user.name}</h1>
 

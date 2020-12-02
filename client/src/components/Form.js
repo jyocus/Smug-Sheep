@@ -30,7 +30,7 @@ export default function MultilineTextFields() {
     body: "",
     userPosts: []
   });
-  const userPosts = [];
+  //const userPosts = [];
 
 
   useEffect(()=>{
@@ -65,6 +65,10 @@ export default function MultilineTextFields() {
     event.preventDefault()
     API.savePost(blog).then((result) => {
       console.log("testing save post result", result);
+
+      //Plain JS to have the page reload everytime its refereshed. However it should be covered in UseEffect hook???
+      window.location.reload()
+      
       //setValue(result);
     })
     //console.log("testing event data", event)
