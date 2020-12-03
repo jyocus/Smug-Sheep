@@ -8,10 +8,11 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Avatar } from '@material-ui/core';
-import Bleetify from "bleetify"
-
+import Bleetify from "bleetify";
+import { useHistory } from "react-router-dom";
+ 
 //Bleetify!
-const buttonText = "Start Shearing";
+const buttonText = "Leave the Herd";
 const bleet = Bleetify.bleet(buttonText, 100)
 
 const useStyles = makeStyles({
@@ -48,8 +49,18 @@ const useStyles = makeStyles({
 
 export default function Profile() {
     const classes = useStyles();
+    const history = useHistory(); 
+
     const { user, isAuthenticated } = useAuth0()
+    const { logout } = useAuth0();
+
+    if(logout === true) {
+      history.push("/");
+    }
+
     API.getUser(user)
+
+    //{isAuthenticated === false ? history.push("/") : null}
 
     const getBleet = bleet; 
   
@@ -65,7 +76,8 @@ export default function Profile() {
           </Typography>
           <Avatar className={classes.avatar} alt={user.name} src={user.picture} />
         </CardContent>
-          <Button href="/blog" variant="contained" className={classes.button} color="secondary" size="small">{getBleet}</Button>
+          <Button variant="contained" className={classes.button} color="secondary" size="small" onClick={() => logout()}>{getBleet}</Button>
+         
       </Card>
         )
     );
