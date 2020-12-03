@@ -123,6 +123,8 @@ export default function MultilineTextFields() {
                 label="Title"
                 placeholder="i.e. Friendly Neighbor"
                 multiline
+                helperText="Required"
+                // required
                 name="title"
                 value={blog.title}
                 rowsMax={4}
@@ -136,6 +138,7 @@ export default function MultilineTextFields() {
                 label="Body"
                 placeholder="Before the storm started my neighbor brought in my favorite plants. Thank you!"
                 multiline
+                // required
                 inputProps={{
                   maxlength: CHARACTER_LIMIT
                 }}
@@ -151,7 +154,10 @@ export default function MultilineTextFields() {
                 // fullWidth="true"
                 style = {{width: 400}}
                 /> 
-                <Button onClick={handleClick} className={classes.what} variant="contained">Bleet</Button>   
+                <Grid direction="row">
+                <Button onClick={handleClick} className={classes.what} variant="contained">Bleet</Button>  
+                {/* <Profile /> */}
+                </Grid> 
             </Grid>
 
             <Grid

@@ -17,12 +17,12 @@ const bleet = Bleetify.bleet(buttonText, 100)
 
 const useStyles = makeStyles({
     root: {
-      maxWidth: 300,
-      marginRight: '25px',
-      marginLeft: 'auto',
+      maxWidth: 400,
+      marginLeft: '25px',
+      marginRight: 'auto',
       display: 'block', 
       marginTop: '10px',
-      opacity: 0.75,
+      // opacity: 0.75,
       paddingBottom: '5px',
     },
     bullet: {
