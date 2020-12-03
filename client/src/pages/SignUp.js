@@ -17,6 +17,7 @@ import sheepIcon from '@iconify-icons/mdi/sheep';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import { useHistory } from "react-router-dom";
 import "../index.css";
 
 //Imported Components 
@@ -79,10 +80,14 @@ const name = 'Bill'
 
 export default function SignUp() {
   const classes = useStyles();
+  const history = useHistory();
 
   const { user, isAuthenticated } = useAuth0()
-console.log('isAutheticated in signup page!!', isAuthenticated)
+  console.log('isAutheticated in signup page!!', isAuthenticated)
 
+  if(isAuthenticated === true) {
+    history.push("/blog");
+  }
 
   return (
     <React.Fragment>
