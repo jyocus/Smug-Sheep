@@ -6,7 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import Image from 'material-ui-image';
-import SheepImage from '../components/SheepImage'
+// import SheepImage from '../components/SheepImage'
+import QuoteCard from '../components/QuoteCard';
 
 
 
@@ -63,9 +64,10 @@ export default function MainFeaturedPost(props) {
             <Typography variant="h5" color="inherit" paragraph>
               {post.description}
             </Typography>
-            <Grid item md={4}>
+            <QuoteCard />
+            {/* <Grid item md={4}>
               <SheepImage />
-            </Grid>
+            </Grid> */}
             {/* <Link variant="subtitle1" href="#">
               {post.linkText}
             </Link> */}

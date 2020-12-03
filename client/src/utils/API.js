@@ -23,6 +23,10 @@ showUser: function() {
   savePost: function(postData) {
     console.log(postData)
     return axios.post("/api/posts", postData);
+  },
+
+  getQuote: function(){
+    return axios.get("https://cors-anywhere.herokuapp.com/https://zenquotes.io/api/random")
   }
 
     // // Deletes the post with the given id
