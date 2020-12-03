@@ -8,6 +8,11 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Avatar } from '@material-ui/core';
+import Bleetify from "bleetify"
+
+//Bleetify!
+const buttonText = "Start Shearing";
+const bleet = Bleetify.bleet(buttonText, 100)
 
 const useStyles = makeStyles({
     root: {
@@ -45,6 +50,8 @@ export default function Profile() {
     const classes = useStyles();
     const { user, isAuthenticated } = useAuth0()
     API.getUser(user)
+
+    const getBleet = bleet; 
   
     return (
         isAuthenticated && (
@@ -58,7 +65,7 @@ export default function Profile() {
           </Typography>
           <Avatar className={classes.avatar} alt={user.name} src={user.picture} />
         </CardContent>
-          <Button href="/blog" variant="contained" className={classes.button} color="secondary" size="small">Start Shearing</Button>
+          <Button href="/blog" variant="contained" className={classes.button} color="secondary" size="small">{getBleet}</Button>
       </Card>
         )
     );
