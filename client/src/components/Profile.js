@@ -18,8 +18,8 @@ const bleet = Bleetify.bleet(buttonText, 100)
 const useStyles = makeStyles({
     root: {
       maxWidth: 300,
-      marginLeft: '25px',
-      marginRight: 'auto',
+      marginRight: '25px',
+      marginLeft: 'auto',
       display: 'block', 
       marginTop: '10px',
       opacity: 0.75,
