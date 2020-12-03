@@ -22,8 +22,11 @@ const useStyles = makeStyles({
       marginRight: 'auto',
       display: 'block', 
       marginTop: '10px',
-      // opacity: 0.75,
+      opacity: 0.75,
+      background: '#FF8E53',
       paddingBottom: '5px',
+      // borderColor: 'rgb(235, 170, 224)'
+      dropShadow: '10px'
     },
     bullet: {
       display: 'inline-block',
@@ -38,7 +41,8 @@ const useStyles = makeStyles({
     },
     button: {
         textAlign: 'center',
-        marginBottom: '5px'
+        marginBottom: '5px',
+        // background: '#ffb4da'
     },
     avatar: {
       marginLeft: 'auto',

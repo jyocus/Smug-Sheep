@@ -43,27 +43,33 @@ const {loginWithRedirect} = useAuth0();
   return (
     <React.Fragment>
       <Toolbar className={classes.toolbar}>
-        <Typography className={classes.toolBarFont} size="small">SMUG SHEEP</Typography>
+      <Typography
+          component="h2"
+          variant="h5"
+          color="inherit"
+          align="left"
+        >
+        <Icon icon={sheepIcon} />
+        </Typography>
         <Typography
           component="h2"
           variant="h5"
           color="inherit"
           align="center"
-          noWrap
           className={classes.toolbarTitle}
         >
           {/* ICON  */}
-          <Icon icon={sheepIcon} />
+        <Typography className={classes.toolBarFont} size="small">SMUG SHEEP</Typography>
         </Typography>
-        {/* <IconButton>
-          <SearchIcon />
-        </IconButton> */}
 
-        <Button onClick={() => loginWithRedirect()}
-        variant="outlined" 
-        size="small">
-          Sign up
-        </Button>
+          <Typography
+          component="h2"
+          variant="h5"
+          color="inherit"
+          align="right"
+          >
+          <Icon icon={sheepIcon} />
+          </Typography>
 
 
       </Toolbar>
