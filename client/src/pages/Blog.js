@@ -6,6 +6,7 @@ import MultilineTextFields from '../components/Form'
 import Container from '@material-ui/core/Container';
 import MainFeaturedPost from '../components/MainFeaturedPost';
 import Grid from '@material-ui/core/Grid';
+import ParticlesBg from "particles-bg";
 
 const mainFeaturedPost = {
     title: "So what's the good news?",
@@ -18,13 +19,16 @@ const mainFeaturedPost = {
 
 function Blog() {
     return (
-        <Container maxWidth="lg">
+        <Container >
+            <ParticlesBg type="lines" color="#ffb4da" bg={true} />
             <div className="blog-body">
+                
                 <Header />
                 <Profile />
                 <MultilineTextFields />
                 <MainFeaturedPost post={mainFeaturedPost} />
             </div>
+            {/* </ParticlesBg > */}
         </Container>
     )
 }
