@@ -80,6 +80,8 @@ export default function MultilineTextFields() {
 
 
   console.log("testing new array", blog)
+
+  
   const style= {
     warning: {
       display: blog.body.length >= 50 ? "" : "none"
