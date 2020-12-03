@@ -5,7 +5,12 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import VirtualizedList from './List';
 import API from '../utils/API';
-import Profile from './Profile'
+import Profile from './Profile'; 
+import Bleetify from "bleetify";
+
+//Bleetify!
+const btnText = "Bleet";
+const bleet = Bleetify.bleet(btnText, 100);
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -99,8 +104,9 @@ export default function MultilineTextFields() {
 
   // }
   const CHARACTER_LIMIT = 50;
-
+  const getBleet = bleet;
   return (
+    
        <Grid className={classes.form} item xs={6} sm={6} md={12}>
 
           {/* <div style={style.warning}>You Exceeded the Amount of Letters in a Blog 
@@ -155,7 +161,7 @@ export default function MultilineTextFields() {
                 style = {{width: 400}}
                 /> 
                 <Grid direction="row">
-                <Button onClick={handleClick} className={classes.what} variant="contained">Bleet</Button>  
+                <Button onClick={handleClick} className={classes.what} variant="contained">{getBleet}</Button>  
                 {/* <Profile /> */}
                 </Grid> 
             </Grid>
