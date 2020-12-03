@@ -82,28 +82,29 @@ export default function MultilineTextFields() {
   console.log("testing new array", blog)
 
   
-  const style= {
-    warning: {
-      display: blog.body.length >= 50 ? "" : "none"
-    }
-  }
+  // const style= {
+  //   warning: {
+  //     display: blog.body.length >= 50 ? "" : "none"
+  //   }
+  // }
 
-  const resetForm = () => {
-    // blog.body.length
-    var deletedLetter = blog.body.substring(0, blog.body.length - 1);
-    console.log("Did the letter delete????", deletedLetter)
+  // const resetForm = () => {
+  //   // blog.body.length
+  //   var deletedLetter = blog.body.substring(0, blog.body.length - 1);
+  //   console.log("Did the letter delete????", deletedLetter)
 
-    // setState, ...blog is making a copy of the entire State, and then we just want to update the body object key. and change it to the var above
-    setBlog({...blog, body:deletedLetter})
+  //   // setState, ...blog is making a copy of the entire State, and then we just want to update the body object key. and change it to the var above
+  //   setBlog({...blog, body:deletedLetter})
 
-  }
-  
+  // }
+  const CHARACTER_LIMIT = 50;
+
   return (
        <Grid className={classes.form} item xs={6} md={12}>
 
-          <div style={style.warning}>You Exceeded the Amount of Letters in a Blog 
+          {/* <div style={style.warning}>You Exceeded the Amount of Letters in a Blog 
             <button input="submit" onClick={() => {resetForm()}}>OK</button>
-          </div>
+          </div> */}
 
         <form className={classes.root} noValidate autoComplete="off">
           <div>
@@ -132,9 +133,13 @@ export default function MultilineTextFields() {
                 label="Body"
                 placeholder="Before the storm started my neighbor brought in my favorite plants. Thank you!"
                 multiline
+                inputProps={{
+                  maxlength: CHARACTER_LIMIT
+                }}
+                helperText={`${blog.body.length}/${CHARACTER_LIMIT}`}
                 onChange={handleChange}
                 //Setting up turnary operator for Character Limit
-                disabled = {blog.body.length >= 50 ? "disabled": ""}
+                // disabled = {blog.body.length >= 50 ? "disabled": ""}
                 value={blog.body}
                 name="body"
                 rows={4}
