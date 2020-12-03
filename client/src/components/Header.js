@@ -28,6 +28,10 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(1),
     flexShrink: 0,
   },
+  toolBarFont: {
+    fontFamily: 'impact',
+    fontSize: '25px'
+  }
 }));
 
 export default function Header() {
@@ -39,7 +43,7 @@ const {loginWithRedirect} = useAuth0();
   return (
     <React.Fragment>
       <Toolbar className={classes.toolbar}>
-        <Button size="small">Smug Sheep</Button>
+        <Typography className={classes.toolBarFont} size="small">SMUG SHEEP</Typography>
         <Typography
           component="h2"
           variant="h5"
@@ -51,9 +55,9 @@ const {loginWithRedirect} = useAuth0();
           {/* ICON  */}
           <Icon icon={sheepIcon} />
         </Typography>
-        <IconButton>
+        {/* <IconButton>
           <SearchIcon />
-        </IconButton>
+        </IconButton> */}
 
         <Button onClick={() => loginWithRedirect()}
         variant="outlined" 
