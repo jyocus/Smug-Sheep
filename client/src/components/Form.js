@@ -76,9 +76,35 @@ export default function MultilineTextFields() {
     //console.log("User Post Array", userPosts);
 
   }
+
+
+
   console.log("testing new array", blog)
+
+  
+  const style= {
+    warning: {
+      display: blog.body.length >= 50 ? "" : "none"
+    }
+  }
+
+  const resetForm = () => {
+    // blog.body.length
+    var deletedLetter = blog.body.substring(0, blog.body.length - 1);
+    console.log("Did the letter delete????", deletedLetter)
+
+    // setState, ...blog is making a copy of the entire State, and then we just want to update the body object key. and change it to the var above
+    setBlog({...blog, body:deletedLetter})
+
+  }
+  
   return (
-   <Grid className={classes.form} item xs={6} md={12}>
+       <Grid className={classes.form} item xs={6} md={12}>
+
+          <div style={style.warning}>You Exceeded the Amount of Letters in a Blog 
+            <button input="submit" onClick={() => {resetForm()}}>OK</button>
+          </div>
+
         <form className={classes.root} noValidate autoComplete="off">
           <div>
          <Grid container spacing={3} >
@@ -107,6 +133,8 @@ export default function MultilineTextFields() {
                 placeholder="Before the storm started my neighbor brought in my favorite plants. Thank you!"
                 multiline
                 onChange={handleChange}
+                //Setting up turnary operator for Character Limit
+                disabled = {blog.body.length >= 50 ? "disabled": ""}
                 value={blog.body}
                 name="body"
                 rows={4}
