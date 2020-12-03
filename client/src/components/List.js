@@ -4,27 +4,37 @@ import { makeStyles } from '@material-ui/core/styles';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { FixedSizeList } from 'react-window';
+import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // width: '100%',
+    width: '100%',
     height: 320,
-    maxWidth: 750,
+    // maxWidth: 500,
     backgroundColor: theme.palette.background.paper,
-    marginRight: theme.spacing(3),
+    // marginRight: "10px",
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
   },
+  // title: {
+  //   textAlign: "left"
+  // }
 }));
 
 function renderRow(props) {
   const { index, style } = props;
   const item = props.data[props.index];
   return (
-    <ListItem button style={style} key={index}>
-      <ListItemText primary={`${item.title}`} />
-      <ListItemText  alignItems='flex-start' primary={`${item.body}`} />
-    </ListItem>
+    <Grid>
+      <ListItem button style={style} key={index}>
+        <Grid item md={2}>
+        <ListItemText primary={`${item.title}`} />
+        </Grid>
+        <Grid item md={10}>
+        <ListItemText primary={`${item.body}`} />
+        </Grid>
+      </ListItem>
+    </Grid>
     
   );
 }
@@ -41,7 +51,7 @@ export default function VirtualizedList(props) {
     <div className={classes.root}>
       <header>Your Recent Bleets</header>
       
-      <FixedSizeList itemData={props.posts} height={300} width={750} itemSize={120} itemCount={props.posts.length}>
+      <FixedSizeList itemData={props.posts} height={300} width={"100%"} itemSize={120} itemCount={props.posts.length}>
         {renderRow}
       </FixedSizeList>
     </div>
