@@ -10,15 +10,17 @@ import Divider from '@material-ui/core/Divider';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    height: 320,
+    height: 342,
     // maxWidth: 500,
     backgroundColor: theme.palette.background.paper,
     // marginRight: "10px",
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
   },
-  // title: {
-  //   textAlign: "left"
-  // }
+  header: {
+    fontWeight: 'bold',
+    paddingTop: '10px',
+    paddingBottom: '10px',
+  }
 }));
 
 function renderRow(props) {
@@ -49,7 +51,7 @@ export default function VirtualizedList(props) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <header>Your Recent Bleets</header>
+      <header className={classes.header}>Your Recent Bleets</header>
       
       <FixedSizeList itemData={props.posts} height={300} width={"100%"} itemSize={120} itemCount={props.posts.length}>
         {renderRow}

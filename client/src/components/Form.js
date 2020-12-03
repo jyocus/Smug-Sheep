@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import VirtualizedList from './List';
 import API from '../utils/API';
+import Profile from './Profile'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -100,7 +101,7 @@ export default function MultilineTextFields() {
   const CHARACTER_LIMIT = 50;
 
   return (
-       <Grid className={classes.form} item xs={6} md={12}>
+       <Grid className={classes.form} item xs={6} sm={6} md={12}>
 
           {/* <div style={style.warning}>You Exceeded the Amount of Letters in a Blog 
             <button input="submit" onClick={() => {resetForm()}}>OK</button>
@@ -108,13 +109,15 @@ export default function MultilineTextFields() {
 
         <form className={classes.root} noValidate autoComplete="off">
           <div>
-         <Grid container spacing={3} >
+         <Grid container  >
+        
             <Grid
             item xs={12} sm={6}
             container
             direction="column"
             justify="flex-start"
             alignItems="flex-start">
+                {/* <Profile /> */}
                 <TextField
                 id="standard-multiline-flexible"
                 label="Title"
@@ -142,7 +145,7 @@ export default function MultilineTextFields() {
                 // disabled = {blog.body.length >= 50 ? "disabled": ""}
                 value={blog.body}
                 name="body"
-                rows={4}
+                rows={6}
                 variant="outlined"
                 // defaultValue="Share your good news!"
                 // fullWidth="true"
@@ -153,21 +156,13 @@ export default function MultilineTextFields() {
 
             <Grid
             container
-            item xs={12} sm={6}
+            item xs={12} sm={12} md={6}
             direction="column"
             justify="center"
             alignItems="center">
               <VirtualizedList 
               posts={blog.userPosts}/>
             </Grid>
-
-            {/* <Grid 
-            container
-            direction="column"
-            justify="center"
-            alignItems="flex-end">
-               <VirtualizedList />
-            </Grid> */}
            </Grid>
           </div>
         </form>
