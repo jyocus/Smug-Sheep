@@ -10,10 +10,12 @@ import Divider from '@material-ui/core/Divider';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    height: 342,
+    height: 350,
     // maxWidth: 500,
     backgroundColor: theme.palette.background.paper,
-    // marginRight: "10px",
+    // marginRight: "50px",
+    borderRadius: '10px',
+    paddingRight: "10px",
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
   },
   header: {
