@@ -40,6 +40,11 @@ const useStyles = makeStyles((theme) => ({
       paddingRight: 0,
     },
   },
+  // quoteContent: {
+  //   marginLeft: 'auto',
+  //   marginRight: 'auto',
+  //   // display: 'block', 
+  // }
 }));
 
 export default function MainFeaturedPost(props) {
@@ -54,9 +59,9 @@ export default function MainFeaturedPost(props) {
       src="http://loremflickr.com/300/200"
       /> */}
       <div className={classes.overlay} />
-      <Grid container>
+      <Grid container direction="row">
         
-        <Grid item md={6}>
+        <Grid>
           <div className={classes.mainFeaturedPostContent}>
             <Typography component="h1" variant="h3" color="inherit" gutterBottom>
               {post.title}
@@ -64,13 +69,9 @@ export default function MainFeaturedPost(props) {
             <Typography variant="h5" color="inherit" paragraph>
               {post.description}
             </Typography>
+            <Grid item md={12}>
             <QuoteCard />
-            {/* <Grid item md={4}>
-              <SheepImage />
-            </Grid> */}
-            {/* <Link variant="subtitle1" href="#">
-              {post.linkText}
-            </Link> */}
+            </Grid>
           </div>
         </Grid>
       </Grid>
