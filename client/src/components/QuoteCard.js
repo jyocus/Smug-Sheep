@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -28,32 +28,42 @@ export default function QuoteCard() {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
 
-  API.getQuote().then(response => {
-    console.log("QUOATEEE",response)
+  const [quotes, setQuote] = React.useState({
+      quote: {},
   })
+
+  useEffect(() => {
+   API.getQuote().then(response => {
+    console.log("QUOATEEE",response)
+    setQuote({...quotes, quote: response.data[0]})
+  })   
+  }, [])
+
+  console.log(quotes)
+  
 
 
   return (
     <Card className={classes.root}>
       <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Word of the Day
-        </Typography>
+        {/* <Typography className={classes.title} color="textSecondary" gutterBottom>
+          {quotes.quote.q}
+        </Typography> */}
         <Typography variant="h5" component="h2">
-          be{bull}nev{bull}o{bull}lent
+          {quotes.quote.q}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          adjective
+          {quotes.quote.a}
         </Typography>
-        <Typography variant="body2" component="p">
+        {/* <Typography variant="body2" component="p">
           well meaning and kindly.
           <br />
           {'"a benevolent smile"'}
-        </Typography>
+        </Typography> */}
       </CardContent>
-      <CardActions>
+      {/* <CardActions>
         <Button size="small">Learn More</Button>
-      </CardActions>
+      </CardActions> */}
     </Card>
   );
 }
