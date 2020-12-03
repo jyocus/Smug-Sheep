@@ -6,6 +6,11 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { FixedSizeList } from 'react-window';
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
+import Bleetify from "bleetify"
+
+//Bleetify!
+const blogText = " YOUR RECENT BLEETS"
+const bleet = Bleetify.bleet(blogText, 75);
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -52,10 +57,11 @@ renderRow.propTypes = {
 
 export default function VirtualizedList(props) {
 
+  const getBleet = bleet;
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <header className={classes.header}>YOUR RECENT BLEETS</header>
+      <header className={classes.header}>{getBleet}</header>
       
       <FixedSizeList itemData={props.posts} height={300} width={"100%"} itemSize={120} itemCount={props.posts.length}>
         {renderRow}
