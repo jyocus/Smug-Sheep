@@ -69,9 +69,9 @@ export default function MainFeaturedPost(props) {
             <Typography variant="h5" color="inherit" paragraph>
               {post.description}
             </Typography>
-            <Grid item md={12}>
+            {/* <Grid item md={12}> */}
             <QuoteCard />
-            </Grid>
+            {/* </Grid> */}
           </div>
         </Grid>
       </Grid>

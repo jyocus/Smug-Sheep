@@ -4,14 +4,19 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Blog from './pages/Blog';
 import { useHistory } from "react-router-dom";
 import { useAuth0 } from '@auth0/auth0-react';
+import ParticlesBg from "particles-bg";
 // import { Test } from './components/Test';
 
 
 function App() {
 
   return (
+
+    
+
     <Router>
       <div className="App">
+
         {/* <SignUp /> */}
         {/* <Route path="/" component={SignUp} />
         <Route path="/blog" component={Blog} /> */}
@@ -21,7 +26,7 @@ function App() {
           <Route exact path="/blog" component={Blog} />
         </Switch>
 
-
+        
       </div>
     </Router>
   );
