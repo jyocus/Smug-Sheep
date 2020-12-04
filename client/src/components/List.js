@@ -10,7 +10,7 @@ import Divider from '@material-ui/core/Divider';
 import Bleetify from "bleetify"
 
 //Bleetify!
-const blogText = " YOUR RECENT BLEETS"
+const blogText = " THE FLOCK'S BLEETS"
 const bleet = Bleetify.bleet(blogText, 75);
 
 const useStyles = makeStyles((theme) => ({
