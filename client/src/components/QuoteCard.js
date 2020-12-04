@@ -10,6 +10,7 @@ import API from '../utils/API';
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
+    height: '100px'
   },
   bullet: {
     display: 'inline-block',
