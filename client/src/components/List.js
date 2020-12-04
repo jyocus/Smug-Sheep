@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import ListItem from '@material-ui/core/ListItem';
+import Typography from '@material-ui/core/Typography';
 import ListItemText from '@material-ui/core/ListItemText';
 import { FixedSizeList } from 'react-window';
 import Grid from '@material-ui/core/Grid';
@@ -33,13 +34,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function renderRow(props) {
+  console.log('props in render row!!!', props)
   const { index, style } = props;
   const item = props.data[props.index];
   return (
     <Grid>
       <ListItem button style={style} key={index}>
         <Grid item md={2}>
-        <ListItemText primary={`${item.title}`} />
+        {/* <ListItemText  primary={`${item.title}`} /> */}
+        <ListItemText
+        disableTypography
+        primary={<Typography type="body2" style={{ color: '#FFFFFF', fontWeight: '900' }}>{`${item.title}`}</Typography>}
+      />
         </Grid>
         <Grid item md={10}>
         <ListItemText primary={`${item.body}`} />
