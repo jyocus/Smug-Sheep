@@ -52,11 +52,32 @@ export default function MultilineTextFields() {
 
   // Helper function for button on click
   const handleClick = (event) => {
+    // grab values from state-< title body
+    let {title, body} = blog;
     console.log(blog)
     event.preventDefault()
-    API.savePost(blog).then((result) => {
+    API.savePost({
+      title, body
+    }).then((result) => {
       //Plain JS to have the page reload every time its refreshed. However it should be covered in UseEffect hook???
-      window.location.reload()
+      // setBlog with new userPost
+        // create post obj
+        let newPost = {
+          title, body
+        }
+        // make temp array from userPosts[]
+        let tempArray = blog.userPosts;
+        // push new obj to start of temp array
+        tempArray = [newPost, ...tempArray];
+        // tempArray.push(newPost)
+        // setState with new temp array, title "" body ""
+        setBlog({
+          userPosts: tempArray,
+          title: "",
+          body: ""
+        })
+
+      // window.location.reload()
     })
   }
 

@@ -95,7 +95,7 @@ export default function SignUp() {
         </Box>
       </Container>
       {/* Profile Component  */}
-      <Profile />
+      {/* <Profile /> */}
     </React.Fragment>
   );
 }
