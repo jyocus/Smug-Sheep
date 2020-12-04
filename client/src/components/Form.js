@@ -64,7 +64,8 @@ export default function MultilineTextFields() {
   // Helpful log for checking user input
   // console.log("testing new array", blog)
 
-  const CHARACTER_LIMIT = 50;
+  const CHARACTER_LIMIT = 300;
+  const CHARACTER_LIMIT_TITLE = 25;
   const getBleet = bleet;
   return (
     
@@ -86,7 +87,11 @@ export default function MultilineTextFields() {
                 label="Title"
                 placeholder="i.e. Friendly Neighbor"
                 multiline
-                helperText="Required"
+                inputProps={{
+                  maxlength: CHARACTER_LIMIT_TITLE
+                }}
+                helperText={`${blog.title.length}/${CHARACTER_LIMIT_TITLE}`}
+                // helperText="Required"
                 // required
                 name="title"
                 value={blog.title}
