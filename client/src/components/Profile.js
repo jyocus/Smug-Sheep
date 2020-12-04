@@ -56,6 +56,9 @@ export default function Profile() {
     const classes = useStyles();
     const history = useHistory(); 
 
+    // useEffect(() =>{
+
+    // }, [])
     const { user, isAuthenticated } = useAuth0()
     const { logout } = useAuth0();
 
@@ -63,15 +66,16 @@ export default function Profile() {
       history.push("/");
     }
 
-    API.getUser(user)
+
+    // API.getUser(user)
 
     //{isAuthenticated === false ? history.push("/") : null}
 
     const getBleet = bleet; 
-  
+    
     return (
-        isAuthenticated && (
-      <Card className={classes.root}>
+      isAuthenticated ? (
+        <Card className={classes.root}>
         <CardContent>
           <Typography className={classes.title} color="textPrimary" gutterBottom>
             {user.name}
@@ -84,6 +88,28 @@ export default function Profile() {
           <Button variant="contained" className={classes.button} color="secondary" size="small" onClick={() => logout()}>{getBleet}</Button>
          
       </Card>
-        )
-    );
+      ) : (
+        <div>
+          "Not authenticated"
+        </div>
+      )
+    )
+  
+    // return (
+    //     isAuthenticated && (
+    //   <Card className={classes.root}>
+    //     <CardContent>
+    //       <Typography className={classes.title} color="textPrimary" gutterBottom>
+    //         {user.name}
+    //       </Typography>
+    //       <Typography className={classes.title} color="textPrimary">
+    //         Email: {user.email}
+    //       </Typography>
+    //       <Avatar className={classes.avatar} alt={user.name} src={user.picture} />
+    //     </CardContent>
+    //       <Button variant="contained" className={classes.button} color="secondary" size="small" onClick={() => logout()}>{getBleet}</Button>
+         
+    //   </Card>
+    //     )
+    // );
 }

@@ -11,7 +11,7 @@ const blogModel = require('../models')
 
 module.exports = {
     findAll: function(req, res) {
-      blogModel.Post.find(req.query)
+      blogModel.Post.find(req.query) // .sort({ timestampKEY: -1/1?})
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
