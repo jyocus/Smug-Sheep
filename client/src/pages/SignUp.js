@@ -1,30 +1,28 @@
 // https://material-ui.com/getting-started/usage/
 // https://www.youtube.com/watch?v=PWadEeOuv5o
 import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
-//import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-// import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-// import MoodIcon from '@material-ui/icons/Mood';
-import { Icon, InlineIcon } from '@iconify/react';
-import sheepIcon from '@iconify-icons/mdi/sheep';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
 import { useHistory } from "react-router-dom";
 import "../index.css";
 
+// Material UI
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Avatar from '@material-ui/core/Avatar';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Link from '@material-ui/core/Link';
+import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
+
+// Iconify
+import { Icon} from '@iconify/react';
+import sheepIcon from '@iconify-icons/mdi/sheep';
+
 //Imported Components 
 import LoginButton from "../components/LoginButton"
-import LogoutButton from "../components/LogOutButton"
 import Profile from "../components/Profile"
 
+// Auth0
 import { useAuth0 } from '@auth0/auth0-react';
 
 function Copyright() {
@@ -65,25 +63,10 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const name = 'Bill'
-
-//var whatColor = name === 'Tom' ? (<h1> Hello tom!</h1>) : ''
-
-// if (name === 'Tom') {
-//   return 'red'
-// }
-// else {
-//   return 'blue'
-// }
-
-
-
 export default function SignUp() {
   const classes = useStyles();
   const history = useHistory();
-
   const { user, isAuthenticated } = useAuth0()
-  console.log('isAutheticated in signup page!!', isAuthenticated)
 
   if(isAuthenticated === true) {
     history.push("/blog");
@@ -91,68 +74,28 @@ export default function SignUp() {
 
   return (
     <React.Fragment>
-    <Container className="main" component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <Icon icon={sheepIcon} />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          ready for some good news?
-        </Typography>
-       
-        <form className={classes.form} noValidate>
-          {/* <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            autoFocus
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          /> */}
-          {isAuthenticated === true ? "" : <LoginButton />}
-          {/* <LoginButton /> */}
-          {/* <LogoutButton /> */}
-          
-          <Grid container>
-            {/* <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid>
-            <Grid item>
-              <Link href="#" variant="body2">
-                {"Don't have an account? Sign Up"}
-              </Link>
-            </Grid> */}
-          </Grid>
-        </form>
-      </div>
-      <Box mt={8}>
-        <Copyright />
-          
-      </Box>
-    </Container>
-    {/* HERE IS THE PROFILE COMPONENT  */}
-    <Profile />
+      {/* Main Container  */}
+      <Container className="main" component="main" maxWidth="xs">
+        <CssBaseline />
+          {/* Login Card Component  */}
+          <div className={classes.paper}>
+            <Avatar className={classes.avatar}>
+              <Icon icon={sheepIcon} />
+            </Avatar>
+            <Typography component="h1" variant="h5">
+              ready for some good news?
+            </Typography>
+            <form className={classes.form} noValidate>
+              {isAuthenticated === true ? "" : <LoginButton />}
+            </form>
+          </div>
+        {/* Copyright    */}
+        <Box mt={8}>
+          <Copyright /> 
+        </Box>
+      </Container>
+      {/* Profile Component  */}
+      <Profile />
     </React.Fragment>
   );
 }

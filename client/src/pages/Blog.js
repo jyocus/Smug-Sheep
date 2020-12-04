@@ -12,9 +12,6 @@ const mainFeaturedPost = {
     title: "So what's the good news?",
     description:
       "Each day we have the chance to spread positivity. Here we provide the space to share those stories...",
-    // image: 'https://source.unsplash.com/random',
-    // imgText: 'main image description',
-    // linkText: 'Continue reading…',
   };
 
 function Blog() {
@@ -22,7 +19,6 @@ function Blog() {
         <Container >
             <ParticlesBg type="lines" color="#ffb4da" bg={true} />
             <div className="blog-body">
-                
                 <Header />
                 <Profile />
                 <MultilineTextFields />

@@ -36,82 +36,39 @@ export default function MultilineTextFields() {
     body: "",
     userPosts: []
   });
-  //const userPosts = [];
 
-
+  // USE EFFECT
   useEffect(()=>{
-
-    console.log('HAPPENING!! one time!!')
-
     API.getPosts().then(function(data) {
-      console.log('anyhting back from db ???', data)
-
       setBlog({...blog, userPosts: data.data})
-
     })
+  }, []);
 
-
-  }, [])
-
-// Helper function to capture typing
+  // Helper function to capture typing
   const handleChange = (event) => {
     const {name, value} = event.target
-    console.log(name, value)
     setBlog({...blog, [name]: value});
-    //console.log(event.target.name)
-    //console.log(event.target.value);
   };
 
-  // const inputProps = {
-  //   fullWidth: true,
-  // };
   // Helper function for button on click
   const handleClick = (event) => {
     console.log(blog)
     event.preventDefault()
     API.savePost(blog).then((result) => {
-      console.log("testing save post result", result);
-
-      //Plain JS to have the page reload everytime its refereshed. However it should be covered in UseEffect hook???
+      //Plain JS to have the page reload every time its refreshed. However it should be covered in UseEffect hook???
       window.location.reload()
-      
-      //setValue(result);
     })
-    //console.log("testing event data", event)
-    //userPosts.push(event.target.value)
-    //console.log("User Post Array", userPosts);
-
   }
 
 
+  // Helpful log for checking user input
+  // console.log("testing new array", blog)
 
-  console.log("testing new array", blog)
-
-  
-  // const style= {
-  //   warning: {
-  //     display: blog.body.length >= 50 ? "" : "none"
-  //   }
-  // }
-
-  // const resetForm = () => {
-  //   // blog.body.length
-  //   var deletedLetter = blog.body.substring(0, blog.body.length - 1);
-  //   console.log("Did the letter delete????", deletedLetter)
-
-  //   // setState, ...blog is making a copy of the entire State, and then we just want to update the body object key. and change it to the var above
-  //   setBlog({...blog, body:deletedLetter})
-
-  // }
   const CHARACTER_LIMIT = 50;
   const getBleet = bleet;
   return (
     
        <Grid className={classes.form} item xs={6} sm={6} md={12}>
-
-          {/* <div style={style.warning}>You Exceeded the Amount of Letters in a Blog 
-            <button input="submit" onClick={() => {resetForm()}}>OK</button>
-          </div> */}
 
         <form className={classes.root} noValidate autoComplete="off">
           <div>
