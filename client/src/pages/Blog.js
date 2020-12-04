@@ -13,9 +13,6 @@ const mainFeaturedPost = {
     title: "So what's the good news?",
     description:
       "Each day we have the chance to spread positivity. Here we provide the space to share those stories...",
-    // image: 'https://source.unsplash.com/random',
-    // imgText: 'main image description',
-    // linkText: 'Continue reading…',
   };
 
   const useStyles = makeStyles((theme) => ({
@@ -36,9 +33,12 @@ function Blog() {
         <Container >
             
             <div className="blog-body">
+
+
                 {/* <div className='bubbles'> */}
                 <ParticlesBg canvasClassName={'fullTest'} className={'fullTest'} type="lines" color="#ffb4da" bg={true} />
                 {/* </div> */}
+
                 <Header />
                 <Profile />
                 <MultilineTextFields />
