@@ -1,14 +1,15 @@
 import React, {useEffect} from 'react';
+// Components 
+import VirtualizedList from './List';
+import API from '../utils/API';
+import Profile from './Profile'; 
+// Material UI
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
-import VirtualizedList from './List';
-import API from '../utils/API';
-import Profile from './Profile'; 
-import Bleetify from "bleetify";
-
 //Bleetify!
+import Bleetify from "bleetify";
 const btnText = "Bleet";
 const bleet = Bleetify.bleet(btnText, 100);
 
@@ -59,7 +60,6 @@ export default function MultilineTextFields() {
     API.savePost({
       title, body
     }).then((result) => {
-      //Plain JS to have the page reload every time its refreshed. However it should be covered in UseEffect hook???
       // setBlog with new userPost
         // create post obj
         let newPost = {
@@ -76,18 +76,13 @@ export default function MultilineTextFields() {
           title: "",
           body: ""
         })
-
-      // window.location.reload()
     })
-  }
-
-
-  // Helpful log for checking user input
-  // console.log("testing new array", blog)
+  };
 
   const CHARACTER_LIMIT = 300;
   const CHARACTER_LIMIT_TITLE = 25;
   const getBleet = bleet;
+  
   return (
     
        <Grid className={classes.form} item xs={6} sm={6} md={12}>
