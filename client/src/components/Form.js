@@ -82,23 +82,21 @@ export default function MultilineTextFields() {
   const CHARACTER_LIMIT = 300;
   const CHARACTER_LIMIT_TITLE = 25;
   const getBleet = bleet;
-  
-  return (
-    
-       <Grid className={classes.form} item xs={6} sm={6} md={12}>
 
-        <form className={classes.root} noValidate autoComplete="off">
-          <div>
-         <Grid container  >
-        
+  return (
+
+    <Grid className={classes.form} item xs={6} sm={6} md={12}>
+      <form className={classes.root} noValidate autoComplete="off">
+        <div>
+          <Grid container>
             <Grid
-            item xs={12} sm={6}
-            container
-            direction="column"
-            justify="flex-start"
-            alignItems="flex-start">
-                {/* <Profile /> */}
-                <TextField
+              item xs={12} sm={6}
+              container
+              direction="column"
+              justify="flex-start"
+              alignItems="flex-start">
+              {/* TITLE INPUT    */}
+              <TextField
                 id="standard-multiline-flexible"
                 label="Title"
                 placeholder="i.e. Friendly Neighbor"
@@ -107,57 +105,50 @@ export default function MultilineTextFields() {
                   maxlength: CHARACTER_LIMIT_TITLE
                 }}
                 helperText={`${blog.title.length}/${CHARACTER_LIMIT_TITLE}`}
-                // helperText="Required"
-                // required
                 name="title"
                 value={blog.title}
                 rowsMax={4}
-                // defaultValue="Title"
                 onChange={handleChange}
                 variant="outlined"
-                style = {{width: 400}}
-                />
-                <TextField
+                style={{ width: 400 }}
+              />
+              {/* BODY INPUT  */}
+              <TextField
                 id="standard-multiline-static"
                 label="Body"
                 placeholder="Before the storm started my neighbor brought in my favorite plants. Thank you!"
                 multiline
-                // required
                 inputProps={{
                   maxlength: CHARACTER_LIMIT
                 }}
                 helperText={`${blog.body.length}/${CHARACTER_LIMIT}`}
                 onChange={handleChange}
-                //Setting up turnary operator for Character Limit
-                // disabled = {blog.body.length >= 50 ? "disabled": ""}
                 value={blog.body}
                 name="body"
                 rows={6}
                 variant="outlined"
-                // defaultValue="Share your good news!"
-                // fullWidth="true"
-                style = {{width: 400}}
-                /> 
-                <Grid direction="row">
-                <Button onClick={handleClick} className={classes.what} variant="contained">{getBleet}</Button>  
-                {/* <Profile /> */}
-                </Grid> 
+                style={{ width: 400 }}
+              />
+              {/* BLEET BUTTON  */}
+              <Grid direction="row">
+                <Button onClick={handleClick} className={classes.what} variant="contained">{getBleet}</Button>
+              </Grid>
             </Grid>
-
+            {/* USER POSTS CONTAINER */}
             <Grid
-            container
-            item xs={12} sm={12} md={6}
-            direction="column"
-            justify="center"
-            alignItems="center">
-              <VirtualizedList 
-              posts={blog.userPosts}/>
+              container
+              item xs={12} sm={12} md={6}
+              direction="column"
+              justify="center"
+              alignItems="center">
+              <VirtualizedList
+                posts={blog.userPosts} />
             </Grid>
-           </Grid>
-          </div>
-        </form>
-    </Grid>  
+          </Grid>
+        </div>
+      </form>
+    </Grid>
   );
-}
+};
 
 
