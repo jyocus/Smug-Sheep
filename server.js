@@ -3,15 +3,10 @@ const express = require('express');
 const routes = require('./routes');
 const mongoose = require("mongoose");
 require('dotenv').config();
-
-
-
 // Express instance
 const app = express();
-
 // Variable Port
 const PORT = process.env.PORT || 9001;
-
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -33,8 +28,6 @@ if (process.env.NODE_ENV === 'production') {
 
 // API and View Routes
 app.use(routes);
-
-
 
 // Start the server
 app.listen(PORT, () => {
