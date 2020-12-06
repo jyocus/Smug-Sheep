@@ -10,31 +10,4 @@ return (
         <ParticlesBg type="lines" color="#ffb4da" bg={true}/>
       </div>
     );
-}
-
-
-// STARTING EXAMPLE. MAY NEED TO REVISIT LATER.
-// =============================
- 
-// import { render } from "react-dom";
-// { Component }
-
-// class App extends Component {
-//   constructor() {
-//     super();
-//     this.state = {
-//       name: "React"
-//     };
-//   }
-
-//   render() {
-//     return (
-//       <div>
-//         <SignUp/>
-//         <ParticlesBg type="lines" color="#ffb4da" bg={true}/>
-//       </div>
-//     );
-//   }
-// }
-
-// render(<App />, document.getElementById("root"));
+};

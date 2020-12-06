@@ -1,24 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// Material UI
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
-import Image from 'material-ui-image';
-// import SheepImage from '../components/SheepImage'
+// Components 
 import QuoteCard from '../components/QuoteCard';
-
-
 
 const useStyles = makeStyles((theme) => ({
   mainFeaturedPost: {
     position: 'relative',
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    // backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
     marginBottom: theme.spacing(4),
-    backgroundImage: 'url(https://source.unsplash.com/random)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -40,27 +35,15 @@ const useStyles = makeStyles((theme) => ({
       paddingRight: 0,
     },
   },
-  // quoteContent: {
-  //   marginLeft: 'auto',
-  //   marginRight: 'auto',
-  //   // display: 'block', 
-  // }
 }));
 
 export default function MainFeaturedPost(props) {
   const classes = useStyles();
   const { post } = props;
-
   return (
-    <Paper className={classes.mainFeaturedPost} style={{  }}>
-      {/* Increase the priority of the hero background image */}
-      {/* {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />} */}
-      {/* <Image
-      src="http://loremflickr.com/300/200"
-      /> */}
+    <Paper className={classes.mainFeaturedPost}>
       <div className={classes.overlay} />
       <Grid container direction="row">
-        
         <Grid>
           <div className={classes.mainFeaturedPostContent}>
             <Typography component="h1" variant="h3" color="inherit" gutterBottom>
@@ -69,9 +52,8 @@ export default function MainFeaturedPost(props) {
             <Typography variant="h5" color="inherit" paragraph>
               {post.description}
             </Typography>
-            {/* <Grid item md={12}> */}
+            {/* QUOTE CARD  */}
             <QuoteCard />
-            {/* </Grid> */}
           </div>
         </Grid>
       </Grid>

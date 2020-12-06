@@ -1,9 +1,6 @@
-// https://material-ui.com/getting-started/usage/
-// https://www.youtube.com/watch?v=PWadEeOuv5o
 import React from 'react';
 import { useHistory } from "react-router-dom";
 import "../index.css";
-
 // Material UI
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
@@ -11,17 +8,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Link from '@material-ui/core/Link';
-import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-
 // Iconify
 import { Icon} from '@iconify/react';
 import sheepIcon from '@iconify-icons/mdi/sheep';
-
 //Imported Components 
 import LoginButton from "../components/LoginButton"
-import Profile from "../components/Profile"
-
 // Auth0
 import { useAuth0 } from '@auth0/auth0-react';
 
@@ -36,7 +28,7 @@ function Copyright() {
       {'.'}
     </Typography>
   );
-}
+};
 
 const useStyles = makeStyles(theme => ({
   '@global': {
@@ -66,7 +58,7 @@ const useStyles = makeStyles(theme => ({
 export default function SignUp() {
   const classes = useStyles();
   const history = useHistory();
-  const { user, isAuthenticated } = useAuth0()
+  const { isAuthenticated } = useAuth0()
 
   if(isAuthenticated === true) {
     history.push("/blog");
@@ -77,25 +69,23 @@ export default function SignUp() {
       {/* Main Container  */}
       <Container className="main" component="main" maxWidth="xs">
         <CssBaseline />
-          {/* Login Card Component  */}
-          <div className={classes.paper}>
-            <Avatar className={classes.avatar}>
-              <Icon icon={sheepIcon} />
-            </Avatar>
-            <Typography component="h1" variant="h5">
-              ready for some good news?
+        {/* Login Card Component  */}
+        <div className={classes.paper}>
+          <Avatar className={classes.avatar}>
+            <Icon icon={sheepIcon} />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            ready for some good news?
             </Typography>
-            <form className={classes.form} noValidate>
-              {isAuthenticated === true ? "" : <LoginButton />}
-            </form>
-          </div>
+          <form className={classes.form} noValidate>
+            {isAuthenticated === true ? "" : <LoginButton />}
+          </form>
+        </div>
         {/* Copyright    */}
         <Box mt={8}>
-          <Copyright /> 
+          <Copyright />
         </Box>
       </Container>
-      {/* Profile Component  */}
-      {/* <Profile /> */}
     </React.Fragment>
   );
-}
+};

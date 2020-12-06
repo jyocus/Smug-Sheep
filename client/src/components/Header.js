@@ -1,15 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// Material UI
+import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import SearchIcon from '@material-ui/icons/Search';
-import { Icon, InlineIcon } from '@iconify/react';
+// Iconify
+import { Icon } from '@iconify/react';
 import sheepIcon from '@iconify-icons/mdi/sheep';
-import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
-import { useAuth0 } from '@auth0/auth0-react';
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -36,20 +32,16 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Header() {
   const classes = useStyles();
-
-//Destructuring the Hook 
-const {loginWithRedirect} = useAuth0();
-
   return (
     <React.Fragment>
       <Toolbar className={classes.toolbar}>
-      <Typography
+        <Typography
           component="h2"
           variant="h5"
           color="inherit"
           align="left"
         >
-        <Icon icon={sheepIcon} />
+          <Icon icon={sheepIcon} />
         </Typography>
         <Typography
           component="h2"
@@ -58,20 +50,16 @@ const {loginWithRedirect} = useAuth0();
           align="center"
           className={classes.toolbarTitle}
         >
-          {/* ICON  */}
-        <Typography className={classes.toolBarFont} size="small">SMUG SHEEP</Typography>
+          <Typography className={classes.toolBarFont} size="small">SMUG SHEEP</Typography>
         </Typography>
-
-          <Typography
+        <Typography
           component="h2"
           variant="h5"
           color="inherit"
           align="right"
-          >
+        >
           <Icon icon={sheepIcon} />
-          </Typography>
-
-
+        </Typography>
       </Toolbar>
     </React.Fragment>
   );
