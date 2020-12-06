@@ -39,6 +39,8 @@ After you have joined the flock, take a moment to reflect on your day. Once you'
 This is a small example of what we can do with Auth0 from: https://www.youtube.com/watch?v=MqczHS3Z2bc
 * [Particles](https://www.npmjs.com/package/particles-bg)
 * [Material-UI](https://material-ui.com/)
+// https://material-ui.com/getting-started/usage/
+// https://www.youtube.com/watch?v=PWadEeOuv5o
 * [Iconify React](https://iconify.design/icon-sets/simple-icons/react.html)
 * [Mongo DB](https://www.mongodb.com/)
 
