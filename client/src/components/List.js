@@ -20,6 +20,16 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '10px',
     paddingRight: "10px",
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    [theme.breakpoints.only('sm')]: {
+      width: '500px',
+      marginLeft: '10px',
+      marginTop: '10px'
+    },
+    [theme.breakpoints.only('xs')]: {
+      width: '450px',
+      marginLeft: '10px',
+      marginTop: '10px',
+    },
   },
   header: {
     paddingTop: '10px',
@@ -40,7 +50,7 @@ function renderRow(props) {
         <Grid item md={2}>
           <ListItemText
             disableTypography
-            primary={<Typography type="body2" style={{ color: '#FFFFFF', fontWeight: '900' }}>{`${item.title}`}</Typography>}
+            primary={<Typography type="body2" style={{ color: '#FFFFFF', fontWeight: '900', paddingRight: '5px' }}>{`${item.title}`}</Typography>}
           />
         </Grid>
         {/* LIST BODY  */}
