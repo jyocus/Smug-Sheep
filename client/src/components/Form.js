@@ -27,7 +27,12 @@ const useStyles = makeStyles((theme) => ({
   },
   form: {
     marginBottom: theme.spacing(3),
-  }
+  },
+  // list: {
+  //   [theme.breakpoints.down('md')]: {
+  //     backgroundColor: 'red',
+  //   },
+  // }
 }));
 
 export default function MultilineTextFields() {
@@ -142,7 +147,7 @@ export default function MultilineTextFields() {
               justify="center"
               alignItems="center">
               <VirtualizedList
-                posts={blog.userPosts} />
+               posts={blog.userPosts} />
             </Grid>
           </Grid>
         </div>
