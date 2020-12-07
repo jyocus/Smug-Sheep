@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 // Components 
 import VirtualizedList from './List';
 import API from '../utils/API';
-import Profile from './Profile'; 
+// import Profile from './Profile'; 
 // Material UI
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';

@@ -2,7 +2,7 @@
 //This is a small example of what we can do with Auth0 from: https://www.youtube.com/watch?v=MqczHS3Z2bc
 import React from 'react'
 import { useAuth0 } from '@auth0/auth0-react';
-import API from "../utils/API";
+// import API from "../utils/API";
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
