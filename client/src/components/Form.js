@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
 // Components 
 import VirtualizedList from './List';
 import API from '../utils/API';
@@ -10,6 +10,9 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 //Bleetify!
 import Bleetify from "bleetify";
+
+import { TweenMax, Power3 } from "gsap";
+
 const btnText = "Bleet";
 const bleet = Bleetify.bleet(btnText, 100);
 
@@ -28,15 +31,15 @@ const useStyles = makeStyles((theme) => ({
   form: {
     marginBottom: theme.spacing(3),
   },
-  // list: {
-  //   [theme.breakpoints.down('md')]: {
-  //     backgroundColor: 'red',
-  //   },
-  // }
+  slide: {
+    opacity: 0
+  }
 }));
 
 export default function MultilineTextFields() {
   const classes = useStyles();
+  let vrList = useRef(null)
+
   const [blog, setBlog] = React.useState({
     title: "",
     body: "",
@@ -48,6 +51,15 @@ export default function MultilineTextFields() {
     API.getPosts().then(function(data) {
       setBlog({...blog, userPosts: data.data})
     })
+    TweenMax.to(
+      vrList.current,
+      2,
+      {
+          opacity: 1,
+          x: -25,
+          ease: Power3.easeIn
+      }
+    )
   }, []);
 
   // Helper function to capture typing
@@ -145,7 +157,9 @@ export default function MultilineTextFields() {
               item xs={12} sm={12} md={6}
               direction="column"
               justify="center"
-              alignItems="center">
+              alignItems="center"
+              className={classes.slide}
+              ref={vrList}>
               <VirtualizedList
                posts={blog.userPosts} />
             </Grid>
